@@ -1,21 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+
+
 
 export default function App() {
   return (
     <View style={styles.container}>
       
       <View style={styles.carContainer}>
-        <View style={styles.titlesZ}>
+
+      <ImageBackground 
+      source={require('../TeslaClone/assets/images/money.jpg')} 
+      style={styles.image}
+      />
+      
+                
+        <View style={styles.titles}>
           <Text style={styles.title}>Projeto</Text>
           <Text style={styles.subtitle}>Planejador Financeiro</Text>
         </View>
 
       </View>
-
-
-
 
       <StatusBar style="auto" />
     </View>
@@ -33,7 +39,7 @@ const styles = StyleSheet.create({
     width:'100%',
     height:'100%',
   },
-  titlesZ:{
+  titles:{
     marginTop:'30%',
     width:'100%',
     alignItems:'center',
@@ -45,7 +51,13 @@ const styles = StyleSheet.create({
   },
   subtitle:{
     fontSize:16,
-    color:'#028968'
+    color:'#2E5134'
+  },
+  image:{
+    width:'100%',
+    height:'100%',
+    resizeMode:'cover',
+    position:'absolute',
   }
   
 
