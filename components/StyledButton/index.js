@@ -6,18 +6,18 @@ import styles from '../StyledButton/style';
 
 const StyledButton = (props) =>{
 
-    const type = props.type;
-    console.warn(type);
+    const {type,content,onPress} = props;
+
+    const backgroundColor = type === 'primary' ? '#171a20cc' : '#ffffffa6';
+    const textColor = type === 'primary' ? '#ffffff' : '#171a20';
 
     return(
         <View style={styles.container}>
             <Pressable
-                style={styles.button}
-                onPress={()=>{
-                    console.warn('Ola Mundo')
-                }}
+                style={[styles.button,{backgroundColor:backgroundColor}]}
+                onPress={() => onPress()}
             >
-                <Text style={styles.text}>Adicionar Compra</Text>
+                <Text style={[styles.text, {color:textColor}]}>{content}</Text>
             </Pressable>
         </View>
     );

@@ -17,7 +17,25 @@ const SlideItem = (props) =>{
             <Text style={styles.subtitle}>Planejador Financeiro</Text>
           </View>
 
-          <StyledButton type="primary"/>
+          <View style={styles.buttonsContainer}>
+            <StyledButton 
+            type="primary"
+            content={'Adicionar Compra'}
+            onPress={()=> {
+              console.warn("Compra Adicionada!");
+            }}
+            />
+            <StyledButton 
+            type="secondary"
+            content={'Adicionar Ganho'}
+            onPress={()=> {
+              console.warn('Ganho Adicionada');
+            }}
+            />
+
+          </View>
+
+          
   
         </View>
 
