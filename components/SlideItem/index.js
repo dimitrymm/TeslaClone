@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text,ImageBackground} from 'react-native';
 import styles from './styles';
+import StyledButton from '../StyledButton';
 
 const SlideItem = (props) =>{
     return(
@@ -15,6 +16,8 @@ const SlideItem = (props) =>{
             <Text style={styles.title}>Projeto</Text>
             <Text style={styles.subtitle}>Planejador Financeiro</Text>
           </View>
+
+          <StyledButton type="primary"/>
   
         </View>
 
