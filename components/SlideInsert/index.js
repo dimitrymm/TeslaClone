@@ -1,11 +1,16 @@
-import React from 'react';
-import {View,Text,ImageBackground,TextInput} from 'react-native'
+import React, { useState } from 'react';
+import {View,Text,ImageBackground,TextInput, ToastAndroid} from 'react-native'
 import styles from '../SlideInsert/styles';
 import StyledButton from '../StyledButton';
 
 const SlideInsert = (props) =>{
 
+    const [descricao, setDescricao] = useState('Mercado');
+    const [valor, setValor] = useState('10,00');
+
     const {name,image} = props;
+
+    
 
     return(
         <View style={styles.container}>
@@ -16,31 +21,41 @@ const SlideInsert = (props) =>{
                   
           <View style={styles.titles}>
             <Text style={styles.title}>{name}</Text>
-            
           </View>
+          
+            <View style={styles.subtitle}>
+              <Text style={styles.title}>Descrição:</Text>
+              <TextInput 
+              style={styles.imput}
+              placeholder='Compra de Mercado'
+              onChangeText={()=>setDescricao()}
+              /> 
 
-          <View>
-             
-              
-              
-          </View>
 
-          <View style={styles.buttonsContainer}>
-            <StyledButton 
-              type="primary"
+            </View>
+
+            <View style={styles.subtitle}>
+              <Text style={styles.title}>Valor:</Text>
+              <TextInput 
+              keyboardType='numeric'
+              style={styles.imput}
+              placeholder='R$ 40,00'
+              onChangeText={()=> setValor() }
+              />
+
+              <View style={styles.buttonsContainer}>
+              <StyledButton 
+              type="secondary"
               content={'Adicionar Compra'}
               onPress={()=> {
                console.warn("Compra Adicionada!");
+               showToast();
+              
             }}
             />
-            <StyledButton 
-              type="secondary"
-              content={'Adicionar Ganho'}
-              onPress={()=> {
-                console.warn('Ganho Adicionada');
-            }}
-            />
-          </View> 
+              </View>
+
+            </View> 
         </View>
     );
 
