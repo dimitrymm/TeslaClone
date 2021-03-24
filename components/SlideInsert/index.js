@@ -1,23 +1,28 @@
 import React from 'react';
-import {View, Text,ImageBackground} from 'react-native';
-import styles from './styles';
+import {View,Text,ImageBackground,TextInput} from 'react-native'
+import styles from '../SlideInsert/styles';
 import StyledButton from '../StyledButton';
 
-const SlideItem = (props) =>{
+const SlideInsert = (props) =>{
 
-  const {name,tagLine, image} = props;
+    const {name,image} = props;
 
     return(
-        <View style={styles.carContainer}>
-
-        <ImageBackground 
-        source={image} 
-        style={styles.image}
+        <View style={styles.container}>
+            <ImageBackground 
+                source={image} 
+                style={styles.image}
         />        
                   
           <View style={styles.titles}>
-            <Text style={styles.title}>Projeto</Text>
-            <Text style={styles.subtitle}>{name}</Text>
+            <Text style={styles.title}>{name}</Text>
+            
+          </View>
+
+          <View>
+             
+              
+              
           </View>
 
           <View style={styles.buttonsContainer}>
@@ -32,13 +37,12 @@ const SlideItem = (props) =>{
               type="secondary"
               content={'Adicionar Ganho'}
               onPress={()=> {
-                
                 console.warn('Ganho Adicionada');
             }}
             />
           </View> 
         </View>
-    );      
-};
+    );
 
-export default SlideItem;
+};
+export default SlideInsert;
